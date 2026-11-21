@@ -3,3 +3,11 @@ kind: Kustomization
 resources:
   - servicemonitors.yaml
   - alerts.yaml
+configMapGenerator:
+  - name: grafana-dashboard-tp4
+    files:
+      - dashboard.json
+    options:
+      disableNameSuffixHash: true
+      labels:
+        grafana_dashboard: "1"
