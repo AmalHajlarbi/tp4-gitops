@@ -46,7 +46,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 20,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -586,32 +586,7 @@
             ]
           }
         },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "nginx-dev (Succeeded)"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 5,
@@ -627,9 +602,6 @@
           "placement": "bottom",
           "showLegend": true
         },
-        "timezone": [
-          "Africa/Tunis"
-        ],
         "tooltip": {
           "mode": "single",
           "sort": "none"
@@ -701,18 +673,6 @@
           }
         },
         "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "{__name__=\"argocd_app_info\", autosync_enabled=\"true\", container=\"argocd-application-controller\", dest_namespace=\"argocd\", dest_server=\"https://kubernetes.default.svc\", endpoint=\"metrics\", exported_namespace=\"argocd\", health_status=\"Healthy\", instance=\"10.42.0.13:8082\", job=\"argocd-metrics\", name=\"root\", namespace=\"argocd\", phase=\"Succeeded\", pod=\"argocd-application-controller-0\", project=\"default\", repo=\"https://github.com/amalhajlarbi/tp4-gitops\", service=\"argocd-metrics\", sync_status=\"Synced\"}"
-            },
-            "properties": [
-              {
-                "id": "custom.width",
-                "value": 153
-              }
-            ]
-          },
           {
             "matcher": {
               "id": "byName",
@@ -871,11 +831,7 @@
               "pod": true,
               "project": true,
               "repo": true,
-              "service": true,
-              "{__name__=\"argocd_app_info\", autosync_enabled=\"true\", container=\"argocd-application-controller\", dest_namespace=\"argocd\", dest_server=\"https://kubernetes.default.svc\", endpoint=\"metrics\", exported_namespace=\"argocd\", health_status=\"Healthy\", instance=\"10.42.0.13:8082\", job=\"argocd-metrics\", name=\"root\", namespace=\"argocd\", phase=\"Succeeded\", pod=\"argocd-application-controller-0\", project=\"default\", repo=\"https://github.com/amalhajlarbi/tp4-gitops\", service=\"argocd-metrics\", sync_status=\"Synced\"}": false,
-              "{__name__=\"argocd_app_info\", autosync_enabled=\"true\", container=\"argocd-application-controller\", dest_namespace=\"demo\", dest_server=\"https://kubernetes.default.svc\", endpoint=\"metrics\", exported_namespace=\"argocd\", health_status=\"Healthy\", instance=\"10.42.0.13:8082\", job=\"argocd-metrics\", name=\"nginx-dev\", namespace=\"argocd\", phase=\"Succeeded\", pod=\"argocd-application-controller-0\", project=\"default\", repo=\"https://github.com/amalhajlarbi/tp4-gitops\", service=\"argocd-metrics\", sync_status=\"Synced\"}": false,
-              "{__name__=\"argocd_app_info\", autosync_enabled=\"true\", container=\"argocd-application-controller\", dest_namespace=\"monitoring\", dest_server=\"https://kubernetes.default.svc\", endpoint=\"metrics\", exported_namespace=\"argocd\", health_status=\"Healthy\", instance=\"10.42.0.13:8082\", job=\"argocd-metrics\", name=\"monitoring\", namespace=\"argocd\", phase=\"Succeeded\", pod=\"argocd-application-controller-0\", project=\"default\", repo=\"https://prometheus-community.github.io/helm-charts\", service=\"argocd-metrics\", sync_status=\"Synced\"}": false,
-              "{__name__=\"argocd_app_info\", autosync_enabled=\"true\", container=\"argocd-application-controller\", dest_namespace=\"monitoring\", dest_server=\"https://kubernetes.default.svc\", endpoint=\"metrics\", exported_namespace=\"argocd\", health_status=\"Healthy\", instance=\"10.42.0.13:8082\", job=\"argocd-metrics\", name=\"monitoring-config\", namespace=\"argocd\", phase=\"Succeeded\", pod=\"argocd-application-controller-0\", project=\"default\", repo=\"https://github.com/amalhajlarbi/tp4-gitops\", service=\"argocd-metrics\", sync_status=\"Synced\"}": false
+              "service": true
             },
             "includeByName": {},
             "indexByName": {
@@ -907,8 +863,7 @@
               "job": "",
               "name": "Application",
               "service": "",
-              "sync_status": "Sync",
-              "{__name__=\"argocd_app_info\", autosync_enabled=\"true\", container=\"argocd-application-controller\", dest_namespace=\"argocd\", dest_server=\"https://kubernetes.default.svc\", endpoint=\"metrics\", exported_namespace=\"argocd\", health_status=\"Healthy\", instance=\"10.42.0.13:8082\", job=\"argocd-metrics\", name=\"root\", namespace=\"argocd\", phase=\"Succeeded\", pod=\"argocd-application-controller-0\", project=\"default\", repo=\"https://github.com/amalhajlarbi/tp4-gitops\", service=\"argocd-metrics\", sync_status=\"Synced\"}": ""
+              "sync_status": "Sync"
             }
           }
         }
@@ -992,9 +947,6 @@
           "placement": "bottom",
           "showLegend": true
         },
-        "timezone": [
-          "Africa/Tunis"
-        ],
         "tooltip": {
           "mode": "single",
           "sort": "none"
@@ -1164,9 +1116,6 @@
           "placement": "bottom",
           "showLegend": true
         },
-        "timezone": [
-          "Africa/Tunis"
-        ],
         "tooltip": {
           "mode": "single",
           "sort": "none"
@@ -1449,7 +1398,7 @@
               }
             ]
           },
-          "unit": "short"
+          "unit": "suffix: mCPU"
         },
         "overrides": []
       },
@@ -1786,9 +1735,6 @@
           "placement": "bottom",
           "showLegend": true
         },
-        "timezone": [
-          "Africa/Tunis"
-        ],
         "tooltip": {
           "mode": "single",
           "sort": "none"
@@ -1826,6 +1772,6 @@
   "timezone": "",
   "title": "TP4 GitOps Overview",
   "uid": "cg4wbmgd3so3kb",
-  "version": 13,
+  "version": 14,
   "weekStart": ""
 }
