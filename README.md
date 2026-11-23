@@ -216,20 +216,3 @@ L'état *Pending* pendant la durée `for` évite les fausses alertes avant le pa
 1. **Montée en charge** : Git passe à 5 réplicas. Les courbes Desired, Available et le compteur de syncs réagissent.
 2. **Anomalie** : tag d'image invalide poussé. Pods en `ErrImagePull`, alerte `PodImagePullOrCrash` en Pending puis Firing, application Degraded, puis `ArgoAppDegraded` en Firing.
 3. **Résolution** : `git revert` puis `git push`. Les pods redeviennent Healthy et les alertes repassent à Normal.
-
-## 9. Sécurité, bonnes pratiques et limites
-
-**Limites assumées (contexte TP)**
-
-- Dépôt public ; mot de passe Grafana en clair dans `argocd-apps/monitoring.yaml` ; token Git mémorisé en clair sur la VM.
-- Le polling à 30 s est appliqué par commande (`argocd-cm`) et n'est pas versionné dans Git.
-- Prometheus : rétention de 2 jours, sans stockage persistant, sans haute disponibilité ; Alertmanager sans récepteur (email, Slack).
-- Cluster mono-nœud ; l'overlay `prod` est défini mais non déployé ; pas de CI (build, scan d'image, tests) en amont.
-
-**En production**
-
-- Secrets : Sealed Secrets ou External Secrets ; accès Git par clé SSH de déploiement ou GitHub App.
-- ArgoCD : SSO et RBAC, AppProjects restreints, webhook Git à la place du polling.
-- `prune` et `selfHeal` : à encadrer (ils suppriment ou écrasent des ressources).
-- Correction par `git revert` plutôt que par rollback d'interface, qui laisse temporairement le cluster en avance sur Git.
-- Observabilité : stockage persistant, alertes routées vers un canal d'astreinte, seuils sur les limites de ressources et SLO de disponibilité.
