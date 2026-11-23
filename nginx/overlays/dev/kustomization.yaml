@@ -8,4 +8,4 @@ replicas:
     count: 5
 images:
   - name: nginx
-    newTag: "1.99.99-inexistant"
+    newTag: "1.26.2"
